@@ -34,7 +34,6 @@
             this.textBoxTodo = new System.Windows.Forms.TextBox();
             this.labelTime = new System.Windows.Forms.Label();
             this.labelGreeting = new System.Windows.Forms.Label();
-            this.dataGridViewTodos = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +44,9 @@
             this.labelFullname = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.textBoxEmail = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTodos)).BeginInit();
+            this.listViewActions = new System.Windows.Forms.ListView();
+            this.textBoxRespon = new System.Windows.Forms.TextBox();
+            this.todo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,15 +91,6 @@
             this.labelGreeting.Size = new System.Drawing.Size(158, 30);
             this.labelGreeting.TabIndex = 4;
             this.labelGreeting.Text = "Good Morning,";
-            // 
-            // dataGridViewTodos
-            // 
-            this.dataGridViewTodos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridViewTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTodos.Location = new System.Drawing.Point(13, 190);
-            this.dataGridViewTodos.Name = "dataGridViewTodos";
-            this.dataGridViewTodos.Size = new System.Drawing.Size(331, 175);
-            this.dataGridViewTodos.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -194,12 +186,39 @@
             this.textBoxEmail.TabIndex = 14;
             this.textBoxEmail.Visible = false;
             // 
+            // listViewActions
+            // 
+            this.listViewActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.todo});
+            this.listViewActions.HideSelection = false;
+            this.listViewActions.Location = new System.Drawing.Point(12, 187);
+            this.listViewActions.Name = "listViewActions";
+            this.listViewActions.Size = new System.Drawing.Size(332, 166);
+            this.listViewActions.TabIndex = 15;
+            this.listViewActions.UseCompatibleStateImageBehavior = false;
+            this.listViewActions.View = System.Windows.Forms.View.Details;
+            // 
+            // textBoxRespon
+            // 
+            this.textBoxRespon.Location = new System.Drawing.Point(698, 36);
+            this.textBoxRespon.Multiline = true;
+            this.textBoxRespon.Name = "textBoxRespon";
+            this.textBoxRespon.Size = new System.Drawing.Size(425, 329);
+            this.textBoxRespon.TabIndex = 16;
+            // 
+            // todo
+            // 
+            this.todo.Text = "";
+            this.todo.Width = 328;
+            // 
             // TodoList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(663, 365);
+            this.ClientSize = new System.Drawing.Size(1135, 378);
+            this.Controls.Add(this.textBoxRespon);
+            this.Controls.Add(this.listViewActions);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.labelFullname);
             this.Controls.Add(this.button2);
@@ -209,7 +228,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridViewTodos);
             this.Controls.Add(this.labelGreeting);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.textBoxTodo);
@@ -220,7 +238,6 @@
             this.Name = "TodoList";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTodos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,7 +250,6 @@
         private System.Windows.Forms.TextBox textBoxTodo;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Label labelGreeting;
-        private System.Windows.Forms.DataGridView dataGridViewTodos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -244,6 +260,9 @@
         private System.Windows.Forms.Label labelFullname;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.ListView listViewActions;
+        private System.Windows.Forms.TextBox textBoxRespon;
+        private System.Windows.Forms.ColumnHeader todo;
     }
 }
 

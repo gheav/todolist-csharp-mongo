@@ -49,11 +49,14 @@ namespace csharp_mongo
         }
         private void loadTodo()
         {
+            listViewActions.Items.Clear();
             string email    = textBoxEmail.Text;
-            var todos       = todoRepository.GetTodos(email);
-           // string[] act    = todos.actions;
-            dataGridViewTodos.DataSource = todos;
-            dataGridViewTodos.AutoResizeColumns();
+            var actions     = todoRepository.GetActions(email);
+            foreach (var action in actions)
+            {
+                ListViewItem act = new ListViewItem(action.actions);
+                listViewActions.Items.Add(act);
+            }
         }
 
         private void textBoxTodo_KeyUp(object sender, KeyEventArgs e)

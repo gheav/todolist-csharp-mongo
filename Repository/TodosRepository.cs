@@ -1,6 +1,7 @@
 ﻿using csharp_mongo.Core;
 using csharp_mongo.Interfaces;
 using csharp_mongo.Models;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace csharp_mongo.Repository
             _todoCollection.InsertOne(todo);
         }
 
-        public IEnumerable<Todos> GetTodos(string email)
+        public IEnumerable<Todos> GetActions(string email)
         {
             var filter  = Builders<Todos>.Filter.Eq("email", email);
             var todo = _todoCollection.Find(filter).ToList();
